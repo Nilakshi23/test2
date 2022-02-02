@@ -13,3 +13,5 @@ def get_job_details():
         print(job_instance.get_description())
         print(job_instance.is_running())
         print(job_instance.is_enabled()) 
+
+get_job_details()
