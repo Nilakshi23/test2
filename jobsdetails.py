@@ -1,3 +1,4 @@
+from jenkinsapi.jenkins import Jenkins
 def get_job_details():
     # Refer Example #1 for definition of function 'get_server_instance'
     server = get_server_instance()
