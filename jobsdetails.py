@@ -1,17 +1,21 @@
-from jenkinsapi.jenkins import Jenkins
+num = 1634
 
-def get_server_instance():
-    jenkins_url = 'http://localhost:8080/'
-    server = Jenkins(jenkins_url, username='nilaxshi', password='1234')
-    return server
-    
-def get_job_details():
-    # Refer Example #1 for definition of function 'get_server_instance'
-    server = get_server_instance()
-    for job_name, job_instance in server.get_jobs():
-        print('Job Name:%s' %(job_instance.name))
-        print('Job Description:%s' %(job_instance.get_description()))
-        print('Is Job running:%s' %(job_instance.is_running()))
-        print('Is Job enabled:%s' %(job_instance.is_enabled()))
+# Changed num variable to string, 
+# and calculated the length (number of digits)
+order = len(str(num))
 
-get_job_details()
+# initialize sum
+sum = 0
+
+# find the sum of the cube of each digit
+temp = num
+while temp > 0:
+   digit = temp % 10
+   sum += digit ** order
+   temp //= 10
+
+# display the result
+if num == sum:
+   print(num,"is an Armstrong number")
+else:
+   print(num,"is not an Armstrong number")
