@@ -9,11 +9,11 @@ BUILD_URL = sys.argv[4]
 BUILD_STATUS = sys.argv[5]
 SonarQubeQualityGateStatus = sys.argv[6]
 Dashboard = sys.argv[7]
-CHATBOT = sys.argv[8]
+#CHATBOT = sys.argv[8]
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
-    url = CHATBOT
+    url = 'https://chat.googleapis.com/v1/spaces/AAAARM7dFAE/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=73W5Cltjjjv3IGdUv0MWoMP8eegMavqPu3HpAYTeL5I%3D\'
     bot_message = {
         'text' : f"Job Name: {JOB_NAME}\nStarted by User: {BUILD_USER} \nBuild Number: {BUILD_NUMBER}\nBuild URL :  {BUILD_URL}\nStatus: {BUILD_STATUS}\nQuality Gate Status: {SonarQubeQualityGateStatus}\nSonar Project URL : {Dashboard}" 
 		}
