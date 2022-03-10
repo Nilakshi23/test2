@@ -10,6 +10,9 @@ def GetBuildUser(){
 }
 pipeline {
     agent any
+	environment {
+					CHAT=credentials('pdg_devops')
+	}
 	stages {
 			/*stage("Checkout"){
 			steps{
