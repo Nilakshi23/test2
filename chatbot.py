@@ -7,8 +7,6 @@ BUILD_USER = sys.argv[2]
 BUILD_NUMBER=sys.argv[3]
 BUILD_URL = sys.argv[4]
 BUILD_STATUS = sys.argv[5]
-CHAT = sys.argv[6]
-
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
