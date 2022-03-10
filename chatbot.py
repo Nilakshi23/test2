@@ -13,7 +13,7 @@ CHATBOT = sys.argv[8]
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
-    url = $CHATBOT
+    url = "$CHATBOT"
     bot_message = {
         'text' : f"Job Name: {JOB_NAME}\nStarted by User: {BUILD_USER} \nBuild Number: {BUILD_NUMBER}\nBuild URL :  {BUILD_URL}\nStatus: {BUILD_STATUS}\nQuality Gate Status: {QGStatus}\nSonar Project URL : {Dashboard}" 
 		}
