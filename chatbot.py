@@ -9,11 +9,11 @@ BUILD_URL = sys.argv[4]
 BUILD_STATUS = sys.argv[5]
 QGStatus = sys.argv[6]
 Dashboard = sys.argv[7]
-chatbot = sys.argv[8]
+PROXY_CREDENTIALS = sys.argv[8]
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
-    url = $chatbot
+    url = ${env.PROXY_CREDENTIALS}
     bot_message = {
         'text' : f"Job Name: {JOB_NAME}\nStarted by User: {BUILD_USER} \nBuild Number: {BUILD_NUMBER}\nBuild URL :  {BUILD_URL}\nStatus: {BUILD_STATUS}\nQuality Gate Status: {QGStatus}\nSonar Project URL : {Dashboard}" 
 		}
