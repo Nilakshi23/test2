@@ -13,7 +13,7 @@ CHATBOT = sys.argv[8]
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
-    url = 'https://chat.googleapis.com/v1/spaces/${CHATBOT}'
+    url = 'https://chat.googleapis.com/v1/spaces/$CHATBOT'
     bot_message = {
         'text' : f"Job Name: {JOB_NAME}\nStarted by User: {BUILD_USER} \nBuild Number: {BUILD_NUMBER}\nBuild URL :  {BUILD_URL}\nStatus: {BUILD_STATUS}\nQuality Gate Status: {SonarQubeQualityGateStatus}\nSonar Project URL : {Dashboard}" 
 		}
