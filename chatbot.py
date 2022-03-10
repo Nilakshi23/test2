@@ -7,14 +7,17 @@ BUILD_NUMBER=sys.argv[3]
 BUILD_USER = sys.argv[2]
 BUILD_URL = sys.argv[4]
 BUILD_STATUS = sys.argv[5]
-
+CHATBOT = sys.argv[6]
+SONAR_URL = sys.argv[7]
+SonarQubeQualityGateStatus = sys.argv[8]
+Dashboard = sys.argv[9]
 
 
 def main():
     """Hangouts Chat incoming webhook quickstart."""
-    url = 'https://chat.googleapis.com/v1/spaces/AAAARM7dFAE/messages?key=AIzaSyDdI0hCZtE6vySjMm-WEfRq3CPzqKqqsHI&token=73W5Cltjjjv3IGdUv0MWoMP8eegMavqPu3HpAYTeL5I%3D'
+    url = 'https://chat.googleapis.com/v1/spaces/$CHATBOT'
     bot_message = {
-        'text' : f"Job Name: {JOB_NAME}\nStarted by User: {BUILD_USER} \nBuild Number: {BUILD_NUMBER}\nBuild URL :  {BUILD_URL}\nStatus: {BUILD_STATUS}" 
+        'text' : f"Job Name: {JOB_NAME}\nStarted by User: {BUILD_USER} \nBuild Number: {BUILD_NUMBER}\nBuild URL :  {BUILD_URL}\nStatus: {BUILD_STATUS}\nQuality Gate Status: {SonarQubeQualityGateStatus}\nSonar Project URL : {Dashboard}" 
 		}
 
     message_headers = {'Content-Type': 'application/json; charset=UTF-8'}
