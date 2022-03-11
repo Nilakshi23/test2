@@ -11,7 +11,7 @@ def GetBuildUser(){
 pipeline {
     agent any
 	environment {
-            chat = credentials('CHATBOT')
+            chat = credentials('pdg_devops')
     }
 	
 	stages {
@@ -25,7 +25,7 @@ pipeline {
 		stage("Sonar Scanning"){
 			steps{
 			sh '''
-			cd /var/lib/jenkins/workspace/SonarAnalysis/ && /opt/sonar-scanner/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -X -D sonar.projectKey=sonarqubetest -D sonar.login=$SONAR_TOKEN -D sonar.sources=. -D sonar.host.url=http://3.91.146.109:9000/ -D sonar.projectName=Test -D sonar.projectVersion=1.0 
+			cd /var/lib/jenkins/workspace/SonarAnalysis/ && /opt/sonar-scanner/sonar-scanner-4.6.2.2472-linux/bin/sonar-scanner -D sonar.projectKey=sonarqubetest -D sonar.login=$SONAR_TOKEN -D sonar.sources=. -D sonar.host.url=http://3.91.146.109:9000/ -D sonar.projectName=Test -D sonar.projectVersion=1.0 
 	         SONAR_QG_URL="${SONAR_URL}/api/qualitygates/project_status?projectKey=${SONAR_PROJECT_KEY}"
 			 SONAR_QG_RESULT=$(curl -s -u "${SONAR_TOKEN}:" $SONAR_QG_URL)
 			 QG_STATUS=$(echo $SONAR_QG_RESULT | jq -r .projectStatus.status)
