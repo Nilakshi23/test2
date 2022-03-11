@@ -10,6 +10,9 @@ def GetBuildUser(){
 }
 pipeline {
     agent any
+	environment {
+            chat = credentials('CHATBOT')
+    }
 	
 	stages {
 			/*stage("Checkout"){
